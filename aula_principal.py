@@ -46,6 +46,38 @@ print (p // r )
 
                 # indentação 
 
+print("=-=-=")
+print("Bem vindo ao banco Dev!")
+print("=-=-=")
+
+saldo = 1000
+print(f"saldo atual é: R${saldo}")
+
+def sacar(valor):
+    global saldo
+    if saldo >= valor:
+        saldo -= valor
+        print(f"valor sacado: R${valor}")
+    else:
+        print("saldo insuficiente")
+
+def depositar(valor):
+    global saldo
+    saldo += valor
+    print(f"Valor depositado: R${valor}")
+
+depositar_valor = float(input("deposite o valor: "))
+depositar(depositar_valor)
+
+sacar(500)
+
+print(f"Saldo atual é de: R${saldo}")
+
+print("=-=-=")
+print("Obrigado por ser nosso cliente!")
+print("=-=-=")
+
+
 # programa de caixa eletrônico 
 print("Bem-vindo ao caixa eletrônico!")
 def sacar(valor):
