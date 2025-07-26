@@ -77,7 +77,6 @@ print("=-=-=")
 print("Obrigado por ser nosso cliente!")
 print("=-=-=")
 
-
 # programa de caixa eletrônico 
 print("Bem-vindo ao caixa eletrônico!")
 def sacar(valor):
@@ -323,5 +322,115 @@ programo em {linguagem}.")
 
 # exemplo de string 5, de strings com f-strings
 PI = 3.14159
-print(f"Valor de PI: {PI:.2f}")  # formata PI com 2 casas decimais
-print(f"Valor de PI: {PI:5.2f}")  # formata PI com 2 casas decimais
+print(f"Valor de PI: {PI:.2f}")  # formata PI com 2 casas decimais 2f
+print(f"Valor de PI: {PI:5.2f}")  # formata PI com 2 casas decimais 2f e largura total de 5 caracteres
+
+# exemplo de string 6, de strings com fateamento 
+nome = "Vanderson"
+idade = 30     
+profissao = "Programador"
+linguagem = "Python"
+
+dados = {nome, idade} # fomra de ultiliza a lista com string
+
+print("nome: %s idade: %s" % (nome, idade))# nao é mas ultilizado dessa forma 
+print("nome: {} idade: {}".format(nome, idade))  # ultilizando o format
+print(f"nome: {nome} idade: {idade}")  # ultilizando o f-string
+print("nome: {nome} idade: {idade}".format(dados))#  ultiliza a lista com string
+
+# exemplo de string 7, de strings com f-strings e fateamento    
+nome = "Vanderson luiz"
+print(nome[0])  # primeiro caractere 
+print(nome[0:4])  # fatia do nome
+print(nome[9:])
+print(nome[12:])
+print(nome[10:10])
+print(nome[:])
+
+# strings triplas ou de multiplaslinhas 
+
+nome = "camila"
+
+mensagem = f"""
+Olá meu nome é {nome}, 
+Eu estou aprendendo Python
+"""
+print(mensagem)
+
+mensagem = f'''
+    Olá meu nome é {nome}, 
+Eu estou aprendendo Python
+        E para conseguir uma vaga.
+'''
+print(mensagem)
+
+
+"""
+Operação de depósito
+Deve ser possivel depositar valores positivos para 
+minha conta bancaria. A v1 do projeto trabalha apenas
+com 1 usuario, dessa forma não precisamos nos preocupar
+em identificar qual é o número da agencia e conta bancaria .
+Todos os depositos devem ser armazenados em uma variavel 
+e exibidos na operação de extrato.
+"""
+
+
+"""
+Operação de saque
+O sistema deve permitir realizar 3 saques diarios com limite
+maximo de R$ 500,00 por saque. Caso o usuario nao tenha saldo
+em conta, o sistema deve exibir uma mensagem informando que 
+não será possivel sacar o dinheiro por falta de
+saldo. Todos os saques devem ser armazenados em 
+uma variavel e exibidos na operação de extrato.
+  limitie maximo = 1500,00
+
+"""
+
+"""
+Opelração de extrato
+Essa operação deve listar todos os depositos e saques
+realizados na conta. no fim da listagem deve ser 
+exibido o saldo atual da conta.
+
+os valores deve ser exibidos utilizando o formato 
+R$ xxx,xx
+exemplo: 
+1500.45 = R$ 1.500,45
+"""
+
+"""Projeto sistema bancario"""
+menu = """
+bem vindo ao sistema bancário!
+[1] - depositar
+[2] - sacar
+[3] - extrato
+[4] - sair  
+
+=>"""
+saldo = 0 
+limite = 500
+extrato = ""
+numero_saque = 0
+limite_saque = 3
+
+while True:
+    opcao = input()
+    if opcao == 1:
+        print("depositar")
+    
+    elif opcao == 2:
+        print("sacar")
+    
+    elif opcao == 3:
+        print("extrato")
+
+    elif opcao == 4:
+        break
+    
+    else:
+        print("opção invalida, por favor selecione novamente a operação desejada.")
+    
+
+    
