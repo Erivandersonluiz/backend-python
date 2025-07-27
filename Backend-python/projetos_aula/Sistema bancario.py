@@ -18,6 +18,9 @@ while opcao != 0:
     if opcao == 1:
       valor = float(input(f"Qual o valor que o senhor deseja saca: R$ "))
 
+      if valor <= 0: # foi adicioando esse codigo para trata o erro de valor negativo 
+        print("valor invalido.")
+
       if valor > saldo:
         print("Saldo insuficiente.")
 
@@ -37,10 +40,11 @@ while opcao != 0:
     elif opcao == 2:
       valor = input("Quanto o senhor deseja deposita:R$ ")
 
-      valor = float(valor)  # conversão correta aqui
+      valor = float(valor)  # foi adicioando esse codigo para trata o erro
 
-      if valor < 0:
+      if valor <= 0:
           print("valor não permitido para deposita")
+      
       else:
           saldo += valor
           extrato += f"deposito: R${valor:.2f}\n"
@@ -49,8 +53,9 @@ while opcao != 0:
    
     elif opcao == 3: 
          print("=-=-=-=-=-=-=-=-==-=-=")
-         print("EXTRATO Bancario")
-
+         print("EXTRATO BANCARIO")
+         print("=-=-=-=-=-=-=-=-==-=-=")
+    
          if extrato == "":
             saldo == extrato
             print(f"saldo da conta R${saldo}")
