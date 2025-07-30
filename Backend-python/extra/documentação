@@ -1,1 +1,21 @@
+# função para atender o programa 
+def DESCONTO(preco_original, codigo_cupon):
+    if codigo_cupon == "DESCONTO10":
+        return preco_original * 0.90
+    elif codigo_cupon == "DESCONTO20":
+        return preco_original * 0.80
+    elif codigo_cupon == "SEM DESCONTO":
+        return preco_original
+    else:
+        print("cupon nao aceito")
+        return preco_original
 
+# entrada de valores 
+preco_original = float(input("digite o preço do produto:R$ "))
+codigo_cupon = input("")
+
+# para calcular o valores     
+preco_final = DESCONTO(preco_original, codigo_cupon)
+
+# saida do programa
+print(f"{preco_final:.2f}")
