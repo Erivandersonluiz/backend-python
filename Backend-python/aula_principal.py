@@ -433,4 +433,97 @@ while True:
         print("opção invalida, por favor selecione novamente a operação desejada.")
     
 
+    # a logica de prgramação 
+
+# desafio da aula  Calculo salarial 
+
+"""
+Para realizar o calculo receba o valor bruto do salario e o 
+adicional dos beneficios.
+O salario a ser transformado é caculado da seguinte maneira: 
+
+(valor bruto do salario - percentual de imposto mediante ao salario) + adicional dos beneficios
+Para calcular o percentual de imposto segue as aliquotas:
+
+de R$ 0.00 a R$ 1100.00 = 5.00%
+de R$ 1100.00 a R$ 2500.00 = 10.00%
+Maior que R$ 2500.00 = 15.00%
+
+
+# ENTRADA 
+A entrada consiste em varios arquivos de teste, que conterá o VALOR BRUTO DO SALARIO e ADICIONAL DOS BENEFICIOS.
+Conforme mostrado no exemplo de entrada a seguir. 
+
+# SAIDA 
+Para cada arquivo da entrada, tera um arquivo de saida.  E como mencionado no desafi, 
+sera gerado uma lina com um numero que sera a diferença entre o valor bruto do salario
+e o persentual de imposto mediante a faixa salarial somado com o adicional dos beneficios. 
+
+Use o exemplo abaixo para clarear o que está sendo perdido.
+- input: lê uma linha com dados de entrada do usuario
+- print : imprimir um texto da sainda 
+"""
+#função util para o calculo do imposto (baseado nas aliquotas).
+
+def calcular_imposto(salario):
+    aliquota = 0.00
+    if (salario >= 0 and salario <=1100):
+        aliquota = 0.05
+    elif(salario >= 1100 and salario <=2500):
+        aliquota = 0.10
+    else:
+        aliquota = 0.15
+        print("Maior que R$ 2500.00")
+# TODO cria as demais condiçoes para as aliquotas de 10.00% e 15.00%
+        return aliquota * salario
+
+# lê os valores de Entrada:
+valor_salario = float(input())
+valor_beneficio = float(input())
+
+# calculo do imposto atraves da função calculo_imposto:
+valor_imposto = calcular_imposto(valor_salario)
+
+# calculo e imprimi a saida (com 2 casas decimais):
+saida = valor_salario - valor_imposto + valor_beneficio
+print(f"{saida:.2f}")
+
+
+# segundo desafio, Eplorando operadores e manipulação de strings 
+
+"""
+            Descrição
+
+Uma loja online deseja aplicar 
+descontos em seus produtos com base em cupons de desconto digitados 
+pelos clientes.
+
+             Regras de desconto:
+
+"DESCONTO10": 10% de desconto.
+"DESCONTO20": 20% de desconto.
+"SEM_DESCONTO": Sem desconto.
+
+             Entrada
+Preço original do produto.
+Código do cupom digitado.
+
+             Saída
+Preço final após aplicar o desconto. Com duas casas decimais.
+
+"""
+# Dicionário com os valores de desconto
+descontos = {
+    "DESCONTO10": 0.10,
+    "DESCONTO20": 0.20,
+    "SEM_DESCONTO": 0.00
+}
+
+# Entrada do usuário
+preco = float(input().strip())
+cupom = input().strip()
+
+# TODO: Aplique o desconto se o cupom for válido:
+
+
     
