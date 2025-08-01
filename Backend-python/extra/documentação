@@ -19,3 +19,54 @@ preco_final = DESCONTO(preco_original, codigo_cupon)
 
 # saida do programa
 print(f"{preco_final:.2f}")
+
+
+
+# entrada do usuario
+email = input().strip()
+
+# programa para valida os email
+def validar_email(email):
+    # verifica se falta "@" ou se tem espaço
+    if "@" not in email or " " in email:
+        return "e-mail invalido"
+
+    # verifica se começa ou termina com "@"
+    if email.startswith("@") or email.endswith("@"):
+        return "e-mail invalido"
+
+    # tenta separar usuario e dominio
+    try:
+        usuario, dominio = email.split("@")
+    except ValueError:
+        return "e-mail invalido"
+
+    # lista de dominios válidos
+    dominio_valido = ["gmail.com", "outlook.com"]
+
+    # verifica se o domínio está na lista de válidos
+    if dominio not in dominio_valido:
+        return "e-mail invalido"
+
+    return "e-mail valido"
+
+# TODO: Verifique as regras do e-mail:
+"""Deve conter o caractere "@" e um domínio """
+"""como gmail.com ou outlook.com."""
+"""Não pode começar ou terminar com "@"."""
+"""Não pode conter espaços."""
+
+# lista com entradas inválidas (para referência ou testes)
+dominio_invalido = [
+    ".@gmail.com",
+    ".@outlook.com",
+    "outlook.com@", 
+    "gmailcom@",
+    "@ gmail.com",
+    "@ outlook.com",
+    " gmail.com",
+    " outlook.com"
+]
+
+# saida do usuario
+print(validar_email(email))
