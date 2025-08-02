@@ -1,3 +1,9 @@
+# TODO: Verifique as regras do e-mail:
+"""Deve conter o caractere "@" e um domínio """
+"""como gmail.com ou outlook.com."""
+"""Não pode começar ou terminar com "@"."""
+"""Não pode conter espaços."""
+
 # entrada do usuario
 email = input().strip()
 
@@ -5,29 +11,24 @@ email = input().strip()
 def validar_email(email):
     # verificar se falta o "@" ou se tem espaço no e-mail
     if "@" not in email or " " in email:
-        return "e-mail invalido"
-    # verufuca se começa ou termina com o "@"
-    if email.start("@") or email.end("@"):
-        return "e-mail invalido"
+        return "E-mail inválido"
+    # verificarfica se começa ou termina com o "@"
+    if email.startswith("@") or email.endswith("@"): # os metodos SWITH está na documentação oficial do python.
+        return "E-mail inválido"
+    # verificar o nome e dominio
+    partes = email.split("@") # o split é uma string vazia com um separador especificado retorna.
+    if len(partes) != 2:
+        return "E-mail inválido"
     
-    
-# TODO: Verifique as regras do e-mail:
-"""Deve conter o caractere "@" e um domínio """
-"""como gmail.com ou outlook.com."""
-"""Não pode começar ou terminar com "@"."""
-"""Não pode conter espaços."""
+    dominio = partes
 
-dominio_valido = ["gmail.com", "outlook.com"]
-dominio_invalido = [
-    ".@gmail.com",
-    ".@outlook.com",
-    "outlook.com@", 
-    "gmailcom@",
-    "@ gmail.com",
-    "@ outlook.com",
-    " gmail.com",
-    " outlook.com"
-]
+    dominio_valido = ["gmail.com", "outlook.com"]
+
+    if dominio not in dominio_valido:
+        return "E-mail válido"
+
+    return "E-mail válido"
+
 
 # saida do usuario
 print(validar_email(email))
