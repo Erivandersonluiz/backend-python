@@ -1,8 +1,8 @@
 # TODO: Verifique as regras do e-mail:
 """Deve conter o caractere "@" e um domínio """
-"""como gmail.com ou outlook.com."""
-"""Não pode começar ou terminar com "@"."""
-"""Não pode conter espaços."""
+"""como gmail.com ou outlook.com """
+"""Não pode começar ou terminar com "@" """
+"""Não pode conter espaços """
 
 # entrada do usuario
 email = input().strip()

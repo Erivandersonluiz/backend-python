@@ -336,7 +336,7 @@ dados = {nome, idade} # fomra de ultiliza a lista com string
 print("nome: %s idade: %s" % (nome, idade))# nao é mas ultilizado dessa forma 
 print("nome: {} idade: {}".format(nome, idade))  # ultilizando o format
 print(f"nome: {nome} idade: {idade}")  # ultilizando o f-string
-print("nome: {nome} idade: {idade}".format(dados))#  ultiliza a lista com string
+print(f"nome: {nome} idade: {idade}".format(dados))#  ultiliza a lista com string
 
 # exemplo de string 7, de strings com f-strings e fateamento    
 nome = "Vanderson luiz"
@@ -349,7 +349,7 @@ print(nome[:])
 
 # strings triplas ou de multiplaslinhas 
 
-nome = "camila"
+nome = "danoninho"
 
 mensagem = f"""
 Olá meu nome é {nome}, 
@@ -547,3 +547,62 @@ email = input().strip()
 
 # TODO: Verifique as regras do e-mail:
 
+ 
+ 
+                # Modulos de aulas 
+
+# começa com os LISTAS: Criação e acesso aos dados
+
+"""EXEMPLO"""
+
+frutas = ["manga", "uva", "pera"]
+print(frutas)
+
+frutas =[]
+print(frutas) 
+
+letras = list ("python")
+print(letras)
+
+numeros = list(range(10))
+print(numeros)
+
+carro = ["fusca", "fusca 1300", "1984", "120000", "15000", "recife", True]
+print(carro)
+
+# Lista aninhadas 
+"""
+Lista podem armazenar todos os tipos de obetos python, portanto  
+podemos ter uma lista armazenam outras listas.
+Matriz
+"""
+
+matriz = [[1,"a", 2],
+          ["b",3 ,4],
+          [6, 5, "c"]
+        ]
+
+matriz = [0]
+print(matriz)
+matriz = [0][0]
+print(matriz)
+
+
+# metodos da classe list 
+ # [] append
+lista = []
+lista.append(1)
+lista.append("python")
+lista.append([40, 30, 20])
+print(lista)
+
+# [] clear 
+lista = [1, "python", [40, 30, 20]] 
+print(lista)
+lista.clear()
+print(lista)
+
+# [] copy 
+lista = [1, "python", [40, 30, 20]] 
+lista.copy()
+print(lista)
